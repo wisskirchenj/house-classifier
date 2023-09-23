@@ -33,4 +33,5 @@ Have fun!
 
 [//]: # (Project was completed on 18.09.23)
 
-23.09.23 Project started - gitHub repo and project structure setup.
+23.09.23 Project started & Stage 1 completed - Load CSV-data using requests. Extract required information from the data
+with Pandas DataFrame methods. Use unittest.mock.patch to mock input() in pytest.
