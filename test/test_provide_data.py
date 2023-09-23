@@ -54,7 +54,7 @@ class ProvideDataTest(unittest.TestCase):
         house.provide_data.DATA_PATH = "test/Data"
         house.provide_data.FILE_NAME = "house_class_test.csv"
         house.provide_data.CSV_PATH = "test/Data/house_class_test.csv"
-        data = house.classifier.classify()
+        house.classifier.classify()
         lines = mock_stdout.getvalue().splitlines()
         self.assertEqual('5', lines[0])
         self.assertEqual('7', lines[1])
