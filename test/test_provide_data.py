@@ -1,8 +1,6 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
-from pandas.testing import assert_series_equal
-import pandas
 
 import house.provide_data
 import house.classifier
@@ -45,9 +43,10 @@ class ProvideDataTest(unittest.TestCase):
         house.provide_data.FILE_NAME = "house_class_test.csv"
         house.provide_data.CSV_PATH = "test/Data/house_class_test.csv"
         data = house.provide_data.load_house_data()
-        self.assertTupleEqual((5, 7), data.shape)
-        assert_series_equal(data['Price'], pandas.Series([0, 0, 1, 0, 1]), check_names=False)
-        self.assertEqual(4.850476, data.at[1, 'Lon'])
+        self.assertTupleEqual((639, 6), data.X_train.shape)
+        self.assertTupleEqual((275, 6), data.X_test.shape)
+        self.assertTupleEqual((639, ), data.y_train.shape)
+        self.assertTupleEqual((275, ), data.y_test.shape)
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_classify_on_test_data_works(self, mock_stdout):
@@ -55,10 +54,5 @@ class ProvideDataTest(unittest.TestCase):
         house.provide_data.FILE_NAME = "house_class_test.csv"
         house.provide_data.CSV_PATH = "test/Data/house_class_test.csv"
         house.classifier.classify()
-        lines = mock_stdout.getvalue().splitlines()
-        self.assertEqual('5', lines[0])
-        self.assertEqual('7', lines[1])
-        self.assertEqual('False', lines[2])
-        self.assertEqual('6', lines[3])
-        self.assertEqual('99.8', lines[4])
-        self.assertEqual('5', lines[5])
+        self.assertTrue(mock_stdout.getvalue().startswith("{'KV': 76, 'EE': 7"))
+

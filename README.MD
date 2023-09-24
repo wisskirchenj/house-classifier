@@ -35,3 +35,6 @@ Have fun!
 
 23.09.23 Project started & Stage 1 completed - Load CSV-data using requests. Extract required information from the data
 with Pandas DataFrame methods. Use unittest.mock.patch to mock input() in pytest.
+
+24.09.23 Stage 2 completed - use `sklearn test_train_split` to split data into train and test data sets. Provide the
+Datasets class to store these sets.
