@@ -38,3 +38,12 @@ with Pandas DataFrame methods. Use unittest.mock.patch to mock input() in pytest
 
 24.09.23 Stage 2 completed - use `sklearn test_train_split` to split data into train and test data sets. Provide the
 Datasets class to store these sets.
+
+25.09.23 Stage 3 completed - use `OneHotEncoder` to encode categorical data. Use `DecisionTreeClassifier` to train a
+model on the train data set. Use `accuracy_score` to evaluate the model on the test data set.
+
+25.09.23 Stage 4 completed - use `OrdinalEncoder` to encode categorical data this time - yields the best score of the 3.
+Use `DecisionTreeClassifier` and `accuracy_score` as before.
+
+25.09.23 Stage 5 completed - use `TargetEncoder` to encode categorical data this time.
+Use `DecisionTreeClassifier` and `accuracy_score` as before.

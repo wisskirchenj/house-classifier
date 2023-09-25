@@ -54,4 +54,4 @@ class ProvideDataTest(unittest.TestCase):
         house.provide_data.FILE_NAME = "house_class_test.csv"
         house.provide_data.CSV_PATH = "test/Data/house_class_test.csv"
         house.classifier.classify()
-        self.assertTrue(mock_stdout.getvalue().startswith("{'KV': 76, 'EE': 7"))
+        self.assertEqual(mock_stdout.getvalue(),'0.8073\n')

@@ -2,6 +2,7 @@ import os
 import requests
 import sys
 import pandas as pd
+from numpy import ndarray
 
 from house.datasets import Datasets
 
@@ -24,3 +25,7 @@ def download_data_if_needed():
 def load_house_data() -> Datasets:
     download_data_if_needed()
     return Datasets(pd.read_csv(CSV_PATH))
+
+
+def save_predicted(y_predicted: ndarray, filename: str):
+    pd.DataFrame(y_predicted).to_csv(DATA_PATH + '/' + filename, index=False, header=False)
