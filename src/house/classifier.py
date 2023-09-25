@@ -1,11 +1,11 @@
 from typing import Callable
 
 from pandas import DataFrame
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import classification_report
 from sklearn.tree import DecisionTreeClassifier
 
 from house.datasets import Datasets
-from house.provide_data import load_house_data, save_predicted
+from house.provide_data import load_house_data
 from house.encode import target_encode, one_hot_encode, ordinal_encode
 
 
