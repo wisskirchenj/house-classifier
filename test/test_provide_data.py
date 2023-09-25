@@ -54,4 +54,8 @@ class ProvideDataTest(unittest.TestCase):
         house.provide_data.FILE_NAME = "house_class_test.csv"
         house.provide_data.CSV_PATH = "test/Data/house_class_test.csv"
         house.classifier.classify()
-        self.assertEqual(mock_stdout.getvalue(),'0.8073\n')
+        lines = mock_stdout.getvalue().splitlines()
+        self.assertEqual(3, len(lines))
+        self.assertEqual(lines[0], 'OneHotEncoder:0.64')
+        self.assertEqual(lines[1], 'OrdinalEncoder:0.86')
+        self.assertEqual(lines[2], 'TargetEncoder:0.75')

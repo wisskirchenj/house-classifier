@@ -31,7 +31,7 @@ Have fun!
 
 ## Project progress
 
-[//]: # (Project was completed on 18.09.23)
+Project was completed on 25.09.23
 
 23.09.23 Project started & Stage 1 completed - Load CSV-data using requests. Extract required information from the data
 with Pandas DataFrame methods. Use unittest.mock.patch to mock input() in pytest.
@@ -44,6 +44,9 @@ model on the train data set. Use `accuracy_score` to evaluate the model on the t
 
 25.09.23 Stage 4 completed - use `OrdinalEncoder` to encode categorical data this time - yields the best score of the 3.
 Use `DecisionTreeClassifier` and `accuracy_score` as before.
-
+    
 25.09.23 Stage 5 completed - use `TargetEncoder` to encode categorical data this time.
 Use `DecisionTreeClassifier` and `accuracy_score` as before.
+
+25.09.23 Final Stage 6 completed - use `sklearn.metrics classification_report` to get a detailed report on the
+model's performance. Compare the macro F1-score of the 3 encoding variant models.
